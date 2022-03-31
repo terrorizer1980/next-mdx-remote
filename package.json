@@ -10,7 +10,8 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "esbuild": "^0.11.12",
-    "pkg-dir": "^5.0.0"
+    "pkg-dir": "^5.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",
@@ -82,8 +83,11 @@
     "release:minor": "release minor && npm publish",
     "release:patch": "release patch && npm publish",
     "prepublishOnly": "npm run build",
-    "test": "npm run build && jest"
+    "test": "npm run build && jest",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "sideEffects": false,
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "snyk": true
 }
